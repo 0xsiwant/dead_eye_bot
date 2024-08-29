@@ -2,18 +2,16 @@ import { useState } from 'react'
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
 
-import Main from './components/Main/Main';
-import Error from './components/Error/Error';
+import HomePage from './components/Home/Home';
 
 function App() {
 
 
   return (
     <>
-      <div className='w-screen h-screen'>
+      <div className='w-screen h-screen tma-container'>
         <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="*" element={<Error />} />
+          <Route path="/" element={<HomePage />} />
         </Routes>
       </div>
     </>

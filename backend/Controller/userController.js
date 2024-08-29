@@ -9,7 +9,7 @@ exports.fetchUserData = async (req,res) => {
 
         if(isUser){
             return res.status(200).json({
-                status: 'failed',
+                status: 'success',
                 message: 'User Data found!',
                 userData: isUser
             })
@@ -25,7 +25,7 @@ exports.fetchUserData = async (req,res) => {
             await newUser.save();
             return res.status(200).json({
                 status: 'success',
-                message: 'Account create succesfuly!',
+                message: 'Account created successfuly!',
                 userData: newUser
             })
         }
@@ -48,7 +48,7 @@ exports.updateBalance = async (req,res) => {
         );
 
         return res.status(200).json({
-            status: 'failed',
+            status: 'success',
             message: 'Balance updated successfuly!'
         })
     }catch(error){
