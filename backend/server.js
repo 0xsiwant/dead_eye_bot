@@ -11,7 +11,7 @@ app.use(express.json());
 
 // Middleware
 app.use(cors({
-  origin: FRONTEND_PATH
+  origin: 'https://saranfilm.com'
 }));
 
 // Database Connection
