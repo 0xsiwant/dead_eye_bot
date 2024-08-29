@@ -18,14 +18,15 @@ app.use(cors({
 connectDb();
 
 
-// Start express server
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
 // Routes
 app.use('/', userRoutes);
 
 // Test API
 app.get('/', (req, res) => {
   res.send('Backend is running');
+});
+
+// Start express server
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });

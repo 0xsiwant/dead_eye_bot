@@ -3,6 +3,8 @@ import DeadEyeLogo from '../../assets/Logo/deadeye.png';
 import CoinImg from '../../assets/Coin/coin.png';
 import { IoStar } from "react-icons/io5";
 import axios from 'axios';
+const tele = window.Telegram.WebApp;
+tele.disableVerticalSwipes();
 
 const Main = () => {
   const [coins, setCoins] = useState(0);
@@ -13,18 +15,25 @@ const Main = () => {
   useEffect(() => {
 
     const initTelegramWebApp = async () => {
+      tele.expand();
+  
+      tele.ready();
       // Mock Telegram object locally
       let tg;
       tg = window.Telegram.WebApp;
 
       try {
-        // Mock user data for local testing
+        // Mock user data for local testing 
+        /*
         let user = {
           id: 123456789,
           first_name: 'John',
           last_name: 'Doe',
           username: 'johndoe'
         };
+        */
+
+        const user = window.Telegram.WebApp.initDataUnsafe?.user;
 
         if (user) {
           console.log("User is found!");
